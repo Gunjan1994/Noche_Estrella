@@ -1,0 +1,70 @@
+<!--
+Q.1)1. Create a JavaScript restaurantManager class with the following properties:
+⮚ "restaurantList" ● Type: Array
+● Use Case: This will contain a list of restaurant object, with the restaurant
+name,address, and city
+⮚ “printAllRestaurantNames" ● Type: function
+● Arguments: none
+● Use Case: This will print the name of all restaurant names in
+restaurantListonconsole
+⮚ "filterRestaurantByCity" ● Type: function
+● Argument: "city" type: "string" ● Use Case: This will filter the restaurant on the basis of the city provided in
+arguments" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question-1 Restaurant_Gunjan</title>
+</head>
+<body>
+    <h1 style="color:olive">Restaurant Manager Class</h1>
+    <script>
+        class restaurantManager {
+        restaurantList = [{
+            id: 1,
+            restaurantName: 'Jollibee',
+            address: 'Sarjapur',
+            city: 'Bengaluru'
+        },
+        {
+            id: 2,
+            restaurantName: 'Surfer Boy Pizza',
+            address: 'Electronic City 3',
+            city: 'Bengaluru'
+        },
+        {
+            id: 3,
+            restaurantName: 'KFC',
+            address: 'HSR Layout',
+            city: 'Bengaluru'
+        },
+        {
+            id: 4,
+            restaurantName: 'Subway',
+            address: 'Patia',
+            city: 'Bhubaneswar'
+        }]
+
+        printAllRestaurantNames(){
+            this.restaurantList.forEach(function(element){console.log(element.restaurantName)});
+        };
+
+        filterRestaurantByCity(cityname){
+            this.restaurantList.forEach(function(element){
+                if(element.city===cityname)
+                    console.log(element);
+            });
+        };
+    }
+
+    var obj=new restaurantManager;
+    obj.printAllRestaurantNames();
+    obj.filterRestaurantByCity("Bhubaneswar");
+
+
+    </script>
+</body>
+</html>
